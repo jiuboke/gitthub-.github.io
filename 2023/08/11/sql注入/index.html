@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Markdown | Hexo</title>
+  <title>sql注入 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Markdown | Hexo">
+  <meta name="description" content="sql注入 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="一.sql 注入原理 攻击者通过web应用程序利用SQL语句或字符串将非法的数据插入到服务端数据库中，获取数据库的用户管理权限，然后将数据库管理用户权限升至操作系统管理用户权限，控制服务器操作系统，获取重要的信息和机密文件。  二.注入点分类按照注入点分 字符型 数字型  按照提交数据分 GET注入：在get传参时写入参数，将SQl语句闭合，后面加写入自己的SQL语句。 POST注入：通过post">
 <meta property="og:type" content="article">
@@ -431,9 +431,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Markdown" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sql注入" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Markdown</h1>
+        <h1 class="article-title">sql注入</h1>
     
     <div class="article-meta">
         
@@ -443,7 +443,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-04 12:20:22'>2023-08-04 11:28</time>
+            发布时间 : <time class="date" title='最后更新: 2023-08-12 11:38:48'>2023-08-11 17:30</time>
         
     </div>
     <div class="article-meta">
@@ -465,7 +465,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown%E8%AF%AD%E6%B3%95"><span class="toc-text">Markdown语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE"><span class="toc-text">字体设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">分级标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-text">分割线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-text">表格</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-sql-%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86"><span class="toc-text">一.sql 注入原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E6%B3%A8%E5%85%A5%E7%82%B9%E5%88%86%E7%B1%BB"><span class="toc-text">二.注入点分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%89%E7%85%A7%E6%B3%A8%E5%85%A5%E7%82%B9%E5%88%86"><span class="toc-text">按照注入点分</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%89%E7%85%A7%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE%E5%88%86"><span class="toc-text">按照提交数据分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E5%9F%BA%E6%9C%AC%E6%B3%A8%E5%85%A5%E8%AF%AD%E5%8F%A5%EF%BC%88%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%EF%BC%89"><span class="toc-text">三.基本注入语句（查询语句）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E7%9B%B2%E6%B3%A8%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-text">四.盲注的步骤</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -481,44 +481,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h2><h3 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h3><ol>
-<li><em>名字</em>                     *包裹是倾斜</li>
-<li><strong>名字</strong>                **包裹是加粗</li>
-<li><em><strong>名字</strong></em>           ***包裹是倾斜加粗</li>
-<li><del>名字</del>                ~~包裹是 中划线</li>
+        <h3 id="一-sql-注入原理"><a href="#一-sql-注入原理" class="headerlink" title="一.sql 注入原理"></a>一.sql 注入原理</h3><ol>
+<li>攻击者通过web应用程序利用SQL语句或字符串将非法的数据插入到服务端数据库中，获取数据库的用户管理权限，然后将数据库管理用户权限升至操作系统管理用户权限，控制服务器操作系统，获取重要的信息和机密文件。</li>
 </ol>
-<h3 id="分级标题"><a href="#分级标题" class="headerlink" title="分级标题"></a>分级标题</h3><ol>
-<li>一个#代表一级标题</li>
-<li>两个##代表二级标题</li>
-<li>三个###代表三级标题</li>
-<li>四个####代表四级标题</li>
-<li>五个#####代表五级标题</li>
-<li>六个######代表六级标题</li>
+<h3 id="二-注入点分类"><a href="#二-注入点分类" class="headerlink" title="二.注入点分类"></a>二.注入点分类</h3><h5 id="按照注入点分"><a href="#按照注入点分" class="headerlink" title="按照注入点分"></a>按照注入点分</h5><ol>
+<li>字符型</li>
+<li>数字型</li>
 </ol>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>格式<a href=""></a><br>中括号里面填描述，后面小括号里面填路径或者地址链接。（可用于图片和链接）</p>
-<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>在一行中用三个以上的星号  ，减号，下划线。效果一样。</p>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>用TAB上面的键，三个···包裹所写的代码及为代码块，还可以在···后写所使用的语言，换行写代码即可。</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
-<p>大于号加一个空格，就能有一条竖线。</p>
-<p>两个大于号加一个空，有二级竖线</p>
-<p>最多到三级。</p>
-</blockquote>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ol>
-<li>无序列表<br>使用星号，加号或者减号，均可构造一个无序列表</li>
+<h5 id="按照提交数据分"><a href="#按照提交数据分" class="headerlink" title="按照提交数据分"></a>按照提交数据分</h5><ol>
+<li>GET注入：在get传参时写入参数，将SQl语句闭合，后面加写入自己的SQL语句。</li>
+<li>POST注入：通过post传参，原理与get一样，重要的是判断我们所输入的信息是否与数据库产生交互，其次判断SQL语句是如何闭合的。</li>
+<li>COOKIE：有些网站通过查询cookie判断用户是否登录，需要与数据库进行交互，我们可以修改cookie的值，查找我们所需要的东西。或者通过报错注入是网页返回报错信息。</li>
 </ol>
-<ul>
-<li>12</li>
-</ul>
-<ul>
-<li>34</li>
-</ul>
-<ul>
-<li>56</li>
-</ul>
-<ol start="2">
-<li>有序列表<br>即在所写内容上加一个数字和英文句号即可。</li>
+<h3 id="三-基本注入语句（查询语句）"><a href="#三-基本注入语句（查询语句）" class="headerlink" title="三.基本注入语句（查询语句）"></a>三.基本注入语句（查询语句）</h3><ol>
+<li><img src="https://raw.githubusercontent.com/jiuboke/jiuimage/main/img/image-20230812093802727.png" alt="image-20230812093802727"></li>
 </ol>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>-|-|-|的格式，在下面写内容自动成表格，可根据需要加表格数量，加减号竖线。<br>表格对齐，给中间的减号加冒号（：）向那对齐则写到该处，居中对齐则左右两边均有。</p>
+<p>2.查询函数：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>user()</td>
+<td>当前用户名</td>
+</tr>
+<tr>
+<td>database()</td>
+<td>当前所用数据库</td>
+</tr>
+<tr>
+<td>current_user()</td>
+<td>当前用户名（可查看权限）</td>
+</tr>
+<tr>
+<td>version()</td>
+<td>数据库版本</td>
+</tr>
+<tr>
+<td>@@datadir</td>
+<td>数据库路径</td>
+</tr>
+<tr>
+<td>@@version_compile_os</td>
+<td>操作系统版本</td>
+</tr>
+<tr>
+<td>into dumpfil</td>
+<td>写文件操作</td>
+</tr>
+</tbody></table>
+<p>length()：计算括号内的字符长度。</p>
+<p>if(1&#x3D;1，1，2)：判断第一个条件，如果为真返回第一个数，为假返回第二个数。</p>
+<h3 id="四-盲注的步骤"><a href="#四-盲注的步骤" class="headerlink" title="四.盲注的步骤"></a>四.盲注的步骤</h3><ol>
+<li>求闭合字符</li>
+<li>求当前数据库名的长度</li>
+<li>求当前数据库名对应的ASCII值</li>
+<li>求表的数量</li>
+<li>求表名的长度</li>
+<li>求表名对应的ASCII值</li>
+<li>求列的数量</li>
+<li>求列名的长度</li>
+<li>求列名对应的ASCII值</li>
+<li>求字段的数量</li>
+<li>求字段内容的长度</li>
+<li>求字段内容对应的ASCII</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
