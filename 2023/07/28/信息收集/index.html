@@ -6,17 +6,19 @@
   <meta name="keywords" content="">
   <meta name="description" content="信息收集 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="PHP语法基本规则在PHP代码内不可以写标签，PHP的代码可以在标签以内，写完一句加一个分号。 php简介 php是服务器端语言  优点：  跨平台，支持多种数据库  安全性和效率好  成本低   缺点：  安装比较复杂  服务端得语言还有JSp ，ASP,python,nodeJs,go. phpStudy:是搭建服务器得工具\n搭建好服务器可以把php文件放在服务器文件里面 php的输出方式">
+<meta name="description" content="一.sql 注入原理 攻击者通过web应用程序利用SQL语句或字符串将非法的数据插入到服务端数据库中，获取数据库的用户管理权限，然后将数据库管理用户权限升至操作系统管理用户权限，控制服务器操作系统，获取重要的信息和机密文件。  二.注入点分类按照注入点分 字符型 数字型  按照提交数据分 GET注入：在get传参时写入参数，将SQl语句闭合，后面加写入自己的SQL语句。 POST注入：通过post">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP基本语法">
-<meta property="og:url" content="http://example.com/2023/08/11/PHP%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:title" content="sql注入">
+<meta property="og:url" content="http://example.com/2023/08/11/sql%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="PHP语法基本规则在PHP代码内不可以写标签，PHP的代码可以在标签以内，写完一句加一个分号。 php简介 php是服务器端语言  优点：  跨平台，支持多种数据库  安全性和效率好  成本低   缺点：  安装比较复杂  服务端得语言还有JSp ，ASP,python,nodeJs,go. phpStudy:是搭建服务器得工具\n搭建好服务器可以把php文件放在服务器文件里面 php的输出方式">
+<meta property="og:description" content="一.sql 注入原理 攻击者通过web应用程序利用SQL语句或字符串将非法的数据插入到服务端数据库中，获取数据库的用户管理权限，然后将数据库管理用户权限升至操作系统管理用户权限，控制服务器操作系统，获取重要的信息和机密文件。  二.注入点分类按照注入点分 字符型 数字型  按照提交数据分 GET注入：在get传参时写入参数，将SQl语句闭合，后面加写入自己的SQL语句。 POST注入：通过post">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-11T01:32:50.000Z">
-<meta property="article:modified_time" content="2023-08-11T08:51:47.574Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiuboke/jiuimage/main/img/image-20230812093802727.png">
+<meta property="article:published_time" content="2023-08-11T09:30:12.000Z">
+<meta property="article:modified_time" content="2023-08-12T03:38:48.993Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jiuboke/jiuimage/main/img/image-20230812093802727.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
